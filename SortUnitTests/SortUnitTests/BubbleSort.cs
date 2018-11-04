@@ -11,7 +11,7 @@ namespace SortUnitTests
             {
                 swap = false;
 
-                for (int i = 0; i < newArray.Length-2; i++)
+                for (int i = 0; i < newArray.Length-1; i++)
                 {
                     if (newArray[i] > newArray[i + 1])
                     {
