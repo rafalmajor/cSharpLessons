@@ -35,7 +35,13 @@ namespace GeneralSortUnitTests
         public void BubbleSortTest()
         {
             var sorted = BubbleSort.Sort(this.randomUsers);
+            CollectionAssert.AreEqual(sorted, this.sortedUsers);
+        }
 
+        [TestMethod]
+        public void InsertSortTest()
+        {
+            var sorted = IntertSort.Sort(this.randomUsers);
             CollectionAssert.AreEqual(sorted, this.sortedUsers);
         }
     }
