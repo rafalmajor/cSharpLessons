@@ -21,14 +21,14 @@ namespace SortUnitTests
         public void InsertSortTest()
         {
             var sorted = IntertSort.Sort(this.randomItems);
-            CollectionAssert.AreEqual(sorted, sorted);
+            CollectionAssert.AreEqual(sorted, this.sortedItems);
         }
 
         [TestMethod]
         public void QuickSortTest()
         {
             var sorted = QuickSort.Sort(this.randomItems);
-            CollectionAssert.AreEqual(sorted, sorted);
+            CollectionAssert.AreEqual(sorted, this.sortedItems);
         }
 
     }
