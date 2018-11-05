@@ -1,9 +1,19 @@
 using System;
+using System.Linq;
 
 namespace GeneralSortUnitTests
 {
-    public class User : IComparable<User>
+    public class User : IComparable<User>, IEquatable<User>
     {
+        public User(string firstName, string lastName)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Address = "Szczecin";
+            this.Posiotion = "Student";
+            this.Age = 21;
+        }
+
         public string LastName { get; private set; }
 
         public string FirstName { get; private set; }
@@ -24,6 +34,34 @@ namespace GeneralSortUnitTests
             }
 
             return this.FirstName.CompareTo(other.LastName);
+        }
+
+        public override string ToString()
+        {
+            return $"{this.FirstName} {this.LastName}";
+        }
+
+        public bool Equals(User other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return string.Equals(this.LastName, other.LastName) && string.Equals(this.FirstName, other.FirstName);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((User)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((this.LastName != null ? this.LastName.GetHashCode() : 0) * 397) ^ (this.FirstName != null ? this.FirstName.GetHashCode() : 0);
+            }
         }
     }
 }
