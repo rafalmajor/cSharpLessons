@@ -18,8 +18,18 @@ namespace EventsSortUnitTests
             bubbleSort.Done += BubbleSortOnDone;
             bubbleSort.Input = this.randomItems;
             bubbleSort.Sort();
-            
+        }
 
+        [TestMethod]
+        public void InsertSortTest()
+        {
+            var insertSort = new InsertSort();
+            insertSort.Done += (s, a) =>
+            {
+                CollectionAssert.AreEqual(this.sortedItems, ((ISort)s).Output);
+            };
+            insertSort.Input = this.randomItems;
+            insertSort.Sort();
         }
 
         private void BubbleSortOnDone(object sender, EventArgs e)
