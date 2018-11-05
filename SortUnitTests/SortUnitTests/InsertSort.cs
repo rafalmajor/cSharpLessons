@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace SortUnitTests
 {
-    public static class IntertSort
+    public static class InsertSort
     {
         public static int[] Sort(int[] randoms)
         {

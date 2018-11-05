@@ -20,7 +20,7 @@ namespace SortUnitTests
         [TestMethod]
         public void InsertSortTest()
         {
-            var sorted = IntertSort.Sort(this.randomItems);
+            var sorted = InsertSort.Sort(this.randomItems);
             CollectionAssert.AreEqual(sorted, this.sortedItems);
         }
 

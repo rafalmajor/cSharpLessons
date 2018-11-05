@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace GeneralSortUnitTests
 {
-    public static class IntertSort
+    public static class InsertSort
     {
         public static T[] Sort<T>(T[] randoms) where T : IComparable<T>
         {

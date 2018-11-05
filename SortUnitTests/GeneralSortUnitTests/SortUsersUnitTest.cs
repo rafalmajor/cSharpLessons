@@ -41,7 +41,7 @@ namespace GeneralSortUnitTests
         [TestMethod]
         public void InsertSortTest()
         {
-            var sorted = IntertSort.Sort(this.randomUsers);
+            var sorted = InsertSort.Sort(this.randomUsers);
             CollectionAssert.AreEqual(sorted, this.sortedUsers);
         }
 
