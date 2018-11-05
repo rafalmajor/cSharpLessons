@@ -44,5 +44,12 @@ namespace GeneralSortUnitTests
             var sorted = IntertSort.Sort(this.randomUsers);
             CollectionAssert.AreEqual(sorted, this.sortedUsers);
         }
+
+        [TestMethod]
+        public void QuickSortTest()
+        {
+            var sorted = QuickSort.Sort(this.randomUsers);
+            CollectionAssert.AreEqual(sorted, this.sortedUsers);
+        }
     }
 }
