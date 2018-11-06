@@ -7,15 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortUnitTests", "SortUnitTe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneralSortUnitTests", "GeneralSortUnitTests\GeneralSortUnitTests.csproj", "{D8F16DB5-A602-42B6-9797-F4CA6135722E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsSortUnitTests", "EventsSortUnitTests\EventsSortUnitTests.csproj", "{12328953-2615-4DEF-8D27-0EA8FCCAF1E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsSortUnitTests", "EventsSortUnitTests\EventsSortUnitTests.csproj", "{12328953-2615-4DEF-8D27-0EA8FCCAF1E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesSortUnitTest", "DelegatesSortUnitTest\DelegatesSortUnitTest.csproj", "{CB14DBD4-8179-4652-BD08-FCA54BBE9E1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesSortUnitTest", "DelegatesSortUnitTest\DelegatesSortUnitTest.csproj", "{CB14DBD4-8179-4652-BD08-FCA54BBE9E1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwaitConsoleApp", "AsyncAwaitConsoleApp\AsyncAwaitConsoleApp.csproj", "{50B5FF0A-AE32-4921-8DA8-DE6493525334}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwaitConsoleApp", "AsyncAwaitConsoleApp\AsyncAwaitConsoleApp.csproj", "{50B5FF0A-AE32-4921-8DA8-DE6493525334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaBubbleSortUnitTest", "LambdaBubbleSortUnitTest\LambdaBubbleSortUnitTest.csproj", "{FAD12E35-E786-45D7-A357-2D55A7696296}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaBubbleSortUnitTest", "LambdaBubbleSortUnitTest\LambdaBubbleSortUnitTest.csproj", "{FAD12E35-E786-45D7-A357-2D55A7696296}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqTest", "LinqTest\LinqTest.csproj", "{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqTest", "LinqTest\LinqTest.csproj", "{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroudTasks", "BackgroudTasks\BackgroudTasks.csproj", "{280B099D-6B77-44C7-9D06-60497162BA04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280B099D-6B77-44C7-9D06-60497162BA04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280B099D-6B77-44C7-9D06-60497162BA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280B099D-6B77-44C7-9D06-60497162BA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280B099D-6B77-44C7-9D06-60497162BA04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
