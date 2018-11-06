@@ -27,7 +27,8 @@ namespace LinqTest
             var selectedUsers1 = this.randomUsers.Where(user => user.LastName == "Nowak");
 
             var selectedUsers2 = from user in this.randomUsers
-                where user.LastName == "Nowak" select user;
+                where user.LastName == "Nowak"
+                select user;
 
             CollectionAssert.AreEqual(selectedUsers1.ToArray(), selectedUsers2.ToArray());
         }
@@ -36,9 +37,10 @@ namespace LinqTest
         public void GroupTest()
         {
             var groupUsers1 = this.randomUsers.GroupBy(user => user.LastName);
-            var groupUsers2 = from user in this.randomUsers group user by user.LastName;
+            var groupUsers2 = from user in this.randomUsers
+                group user by user.LastName;
 
-            CollectionAssert.AreEqual(groupUsers1.Select(u =>u.Key).ToArray(), groupUsers2.Select(u => u.Key).ToArray());
+            CollectionAssert.AreEqual(groupUsers1.Select(u => u.Key).ToArray(), groupUsers2.Select(u => u.Key).ToArray());
         }
 
         [TestMethod]
@@ -46,7 +48,8 @@ namespace LinqTest
         {
             var orderUser1 = this.randomUsers.OrderBy(user => user.LastName).ThenBy(user => user.FirstName);
             var orderUser2 = from user in this.randomUsers
-                orderby user.LastName, user.FirstName select user;
+                orderby user.LastName, user.FirstName
+                select user;
 
             CollectionAssert.AreEqual(orderUser1.ToArray(), orderUser2.ToArray());
         }
@@ -60,8 +63,6 @@ namespace LinqTest
 
             CollectionAssert.AreEqual(select1.ToArray(), select2.ToArray());
         }
-
-
 
         [TestMethod]
         public void SelectTwoTest()
@@ -106,13 +107,36 @@ namespace LinqTest
         [TestMethod]
         public void SelectManyTest()
         {
+            var cats = new List<Cat>
+                       {
+                           new Cat("Acat", new[] { new User("Jan", "Nowak"), new User("Stanisław", "Nowak") }),
+                           new Cat("Bcat", new[] { new User("Jan", "Nowak") }),
+                           new Cat("Ccat", new[] { new User("Tadeusz", "Kowalski"), new User("Krzysztof", "Kowalczyk", "Stargard") }),
+                       };
 
+            var result = cats.SelectMany(cat => cat.Users, (cat, user) => $"cat:'{cat.Name}' user:'{user.FirstName} {user.LastName}'");
+            var expectedResult = new[]
+                                 {
+                                     "cat:'Acat' user:'Jan Nowak'",
+                                     "cat:'Acat' user:'Stanisław Nowak'",
+                                     "cat:'Bcat' user:'Jan Nowak'",
+                                     "cat:'Ccat' user:'Tadeusz Kowalski'",
+                                     "cat:'Ccat' user:'Krzysztof Kowalczyk'"
+                                 };
+
+            CollectionAssert.AreEqual(expectedResult, result.ToArray());
         }
 
         [TestMethod]
         public void AggegateTest()
         {
+            var allNames = this.randomUsers.Aggregate(
+                (result, currentUser) => result = new User(result.FirstName + " " + currentUser.FirstName, result.LastName + " " + currentUser.LastName));
 
+            var expectedUser = new User("Jan Zbigniew Stanisław Henryk Andrzej Józef Jerzy Tadeusz Krzysztof", "Nowak Wójcik Nowak Kamiński Nowak Kowalski Wiśniewski Kowalski Kowalczyk");
+
+            Assert.AreEqual(expectedUser.FirstName, allNames.FirstName);
+            Assert.AreEqual(expectedUser.LastName, allNames.LastName);
         }
 
         [TestMethod]
@@ -136,10 +160,20 @@ namespace LinqTest
 
         private class Cat
         {
+            public Cat(string name, IEnumerable<User> users)
+            {
+                this.Name = name;
+                this.Users = users;
+            }
+
             public Cat(string ownerLastName)
             {
                 this.OwnerLastName = ownerLastName;
             }
+
+            public string Name { get; }
+
+            public IEnumerable<User> Users { get; }
 
             public string OwnerLastName { get; }
 
