@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsSortUnitTests", "Even
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesSortUnitTest", "DelegatesSortUnitTest\DelegatesSortUnitTest.csproj", "{CB14DBD4-8179-4652-BD08-FCA54BBE9E1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwaitConsoleApp", "AsyncAwaitConsoleApp\AsyncAwaitConsoleApp.csproj", "{50B5FF0A-AE32-4921-8DA8-DE6493525334}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CB14DBD4-8179-4652-BD08-FCA54BBE9E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB14DBD4-8179-4652-BD08-FCA54BBE9E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB14DBD4-8179-4652-BD08-FCA54BBE9E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50B5FF0A-AE32-4921-8DA8-DE6493525334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B5FF0A-AE32-4921-8DA8-DE6493525334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B5FF0A-AE32-4921-8DA8-DE6493525334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B5FF0A-AE32-4921-8DA8-DE6493525334}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
