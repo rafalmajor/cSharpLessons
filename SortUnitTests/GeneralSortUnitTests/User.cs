@@ -5,13 +5,13 @@ namespace GeneralSortUnitTests
 {
     public class User : IComparable<User>, IEquatable<User>
     {
-        public User(string firstName, string lastName)
+        public User(string firstName, string lastName, string address = "Szczecin", string posiotion = "admin", uint age = 21)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.Address = "Szczecin";
-            this.Posiotion = "Student";
-            this.Age = 21;
+            this.Address = address;
+            this.Posiotion = posiotion;
+            this.Age = age;
         }
 
         public string LastName { get; private set; }
@@ -22,7 +22,7 @@ namespace GeneralSortUnitTests
 
         public string Posiotion { get; private set; }
 
-        public UInt16 Age { get; private set; }
+        public uint Age { get; private set; }
 
         public int CompareTo(User other)
         {

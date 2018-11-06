@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwaitConsoleApp", "Asy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaBubbleSortUnitTest", "LambdaBubbleSortUnitTest\LambdaBubbleSortUnitTest.csproj", "{FAD12E35-E786-45D7-A357-2D55A7696296}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqTest", "LinqTest\LinqTest.csproj", "{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{FAD12E35-E786-45D7-A357-2D55A7696296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAD12E35-E786-45D7-A357-2D55A7696296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAD12E35-E786-45D7-A357-2D55A7696296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFEC4177-828D-44CB-A10C-DAA5A9B4EF09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
