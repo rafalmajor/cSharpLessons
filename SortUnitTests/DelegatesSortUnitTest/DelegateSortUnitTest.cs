@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -55,6 +56,19 @@ namespace DelegatesSortUnitTest
             CollectionAssert.AreEqual(this.sortedItems, sorted);
         }
 
+        [TestMethod]
+        public void TestAll()
+        {
+            var funcs = new List<Func<int[], int[]>> { Sort.Bubble, Sort.Insert, Sort.Quick };
+
+            foreach (var func in funcs)
+            {
+                var sorted = func(this.randomItems);
+
+                CollectionAssert.AreEqual(this.sortedItems, sorted);
+            }
+        }
+
         private bool ProcessIntAndReturnResult(int number)
         {
             int sum = 0;
@@ -70,13 +84,6 @@ namespace DelegatesSortUnitTest
         private bool RetrunTrue()
         {
             return true;
-        }
-
-
-
-        [TestMethod]
-        public void TestAll()
-        {
         }
 
         public void DoNothing()
