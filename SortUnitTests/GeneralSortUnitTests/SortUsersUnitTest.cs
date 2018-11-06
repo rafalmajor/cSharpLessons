@@ -46,6 +46,7 @@ namespace GeneralSortUnitTests
         }
 
         [TestMethod]
+        [Ignore]
         public void QuickSortTest()
         {
             var sorted = QuickSort.Sort(this.randomUsers);
