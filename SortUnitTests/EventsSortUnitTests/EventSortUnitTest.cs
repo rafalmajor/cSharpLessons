@@ -32,6 +32,18 @@ namespace EventsSortUnitTests
             insertSort.Sort();
         }
 
+        [TestMethod]
+        public void QuickSortTest()
+        {
+            var quickSort = new QuickSort();
+            quickSort.Done += delegate(object sender, EventArgs args)
+            {
+                CollectionAssert.AreEqual(this.sortedItems, ((ISort)sender).Output);
+            };
+            quickSort.Input = this.randomItems;
+            quickSort.Sort();
+        }
+
         private void BubbleSortOnDone(object sender, EventArgs e)
         {
             CollectionAssert.AreEqual(this.sortedItems, ((ISort)sender).Output);
