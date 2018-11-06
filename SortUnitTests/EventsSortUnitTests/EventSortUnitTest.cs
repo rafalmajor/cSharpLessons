@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -15,7 +16,7 @@ namespace EventsSortUnitTests
         public void BubbleSortTest()
         {
             var bubbleSort = new BubbleSort();
-            bubbleSort.Done += BubbleSortOnDone;
+            bubbleSort.Done += this.SortOnDone;
             bubbleSort.Input = this.randomItems;
             bubbleSort.Sort();
         }
@@ -44,7 +45,27 @@ namespace EventsSortUnitTests
             quickSort.Sort();
         }
 
-        private void BubbleSortOnDone(object sender, EventArgs e)
+        [TestMethod]
+        public void TestAll()
+        {
+            var sorts = new List<ISort> { new BubbleSort(), new InsertSort(), new QuickSort() };
+            foreach (var sort in sorts)
+            {
+                sort.Done += this.SortOnDone;
+            }
+
+            foreach (var sort in sorts)
+            {
+                sort.Input = this.randomItems;
+            }
+
+            foreach (var sort in sorts)
+            {
+                sort.Sort();
+            }
+        }
+
+        private void SortOnDone(object sender, EventArgs e)
         {
             CollectionAssert.AreEqual(this.sortedItems, ((ISort)sender).Output);
         }
